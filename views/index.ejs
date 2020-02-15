@@ -8,10 +8,10 @@
 </head>
 <body>
     <h1 class="display-4 text-center breedName"><%= breed %></h1>
-    <div class="imageFrame">
+    <div id = 'dogBreed'class="imageFrame">
         <img class="rounded img-fluid"src="<%= image %>" height="420" width="420"/>
     </div>
-    <nav class="paginationindex">
+    <nav id='dogImage' class="paginationindex">
             <% if (pages > 0) { %>
                 <ul class="pagination text-center">
                     <% if (current == 1) { %>
