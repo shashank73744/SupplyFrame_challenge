@@ -8,7 +8,10 @@ module.exports = {
         .assert.elementPresent("#dogBreed")
         .assert.elementPresent("#dogImage")
         .assert.domPropertyEquals('#dogBreed', 'classList', ['imageFrame'])
-        .assert.domPropertyEquals('#dogImage', 'classList', ['paginationindex']);
+        .assert.domPropertyEquals('#paginationElement', 'classList', ['paginationindex'])
+        .getElementSize("#dogImage", function(result){
+            console.log('result:', result.value.height,result.value.width);
+        })
   
       // ...
     }
