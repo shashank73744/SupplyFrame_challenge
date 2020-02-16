@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "nightwatch",
-    "start": "node server.js"
+    "start": "node server.js",
+    "sass": "sass ./views/style/main.scss ./views/style/main.css"
   },
   "author": "Shashank",
   "license": "ISC",

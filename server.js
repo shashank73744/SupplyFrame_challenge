@@ -16,7 +16,7 @@ var url = `https://dog.ceo/api/breeds/list/all`;
 
 var listBreeds = []
 
-app.get('/',function(req,res){
+function fetch(req,res){
     request(url,function(error,response,body){
         breeds =JSON.parse(body).message;
         for(var key in breeds){
@@ -24,10 +24,16 @@ app.get('/',function(req,res){
         }
         res.redirect('/1');
     })
-    
+}
+
+app.get('/',function(req,res){
+    fetch(req,res);
 });
 
 app.get('/:page',function(req,res){
+    if(listBreeds.length == 0){
+        fetch(req,res);
+    }
     var page = parseInt(req.params.page) || 1
     var urlImage = "https://dog.ceo/api/breed/"+listBreeds[page]+"/images/random";
     request(urlImage,function(error,response,body){
